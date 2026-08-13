@@ -1,0 +1,6 @@
+Route,Status,Structure / Logic,Notes
+Shop by Part,Locked,Customer browses by part family,Categories listed on Shop by Part sheet
+Shop by Guitar,Locked,Strat Parts | Tele Parts | Les Paul Parts | Bass Parts | Acoustic Parts,Same products can appear in multiple routes without duplication
+Shop by Brand,Locked,Generated from Brand field,Brand ? matching products ? normal filters
+Filters / CMS,Locked philosophy,Core filters + category-specific filters,Technical details remain specifications unless needed for fit
+Inventory status,Reviewed,CURRENT | INCOMING | FUTURE | NOT STOCKED,Future/empty categories should be hidden from live navigation

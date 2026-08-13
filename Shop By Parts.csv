@@ -1,0 +1,41 @@
+Category,Subcategory / Scope,Inventory Status,Live at Launch?,Notes
+Bodies,Strat Bodies,CURRENT,Yes,Keep category name simply 'Bodies'
+Bodies,Tele Bodies,CURRENT,Yes,
+Necks,Strat Necks,CURRENT,Yes,Keep category name simply 'Necks'
+Necks,Tele Necks,CURRENT,Yes,
+Bridges / Tailpieces,Strat Tremolos,CURRENT,Yes,
+Bridges / Tailpieces,Hardtail Bridges,CURRENT,Yes,
+Bridges / Tailpieces,Tele Bridges,CURRENT,Yes,
+Bridges / Tailpieces,Tune-o-Matic Bridges / Stopbar Tailpieces,CURRENT,Yes,Style may include Roller
+Bridges / Tailpieces,Jazzmaster / Mustang Bridges,CURRENT / verify inventory,Yes if stocked,Keep architecture; final SKU check later
+Bridges / Tailpieces,Bass Bridges,CURRENT,Yes,
+Bridges / Tailpieces,Acoustic Bridges,INCOMING,When stock arrives,Also surfaced via Shop by Guitar ? Acoustic Parts
+Bridges / Tailpieces,Bridge Parts & Accessories,CURRENT,Yes,"Studs, posts, conversion hardware etc."
+Machine Heads / Tuners,Guitar/Bass/Acoustic tuning machines,CURRENT,Yes,Electronic/digital tuners do NOT belong here
+Pickups,Strat / Tele / Humbucker / P-90 / Bass / Acoustic,FUTURE,No,Build into blueprint; hide until stock exists
+Pickguards,Strat Pickguards,CURRENT,Yes,
+Pickguards,Tele Pickguards,CURRENT,Yes,
+Pickguards,Les Paul Pickguards,CURRENT,Yes,No Bass or generic 'Other' pickguards
+Knobs & Tips,Current range,CURRENT,Yes,
+Electronics,"Pots, switches and related electronics",CURRENT,Yes,
+Hardware,"Jack plates, screws/springs, back/cavity plates, mounting hardware etc.",CURRENT,Yes,
+Nuts & Saddles,Guitar Nuts,CURRENT,Yes,
+Nuts & Saddles,Bass Nuts,CURRENT,Yes,
+Nuts & Saddles,Bridge Saddles,CURRENT,Yes,
+Nuts & Saddles,Acoustic Saddles,NOT STOCKED,No,Do not include unless range is added later
+Floyd Rose Systems,Tremolos,CURRENT,Yes,Do NOT call these 'Complete Tremolo Systems'; base tremolo may not include nut
+Floyd Rose Systems,Locking Nuts,CURRENT,Yes,Also available as Wix purchase variants/bundles with compatible tremolos
+Floyd Rose Systems,Tremolo Saddles,CURRENT,Yes,
+Floyd Rose Systems,Tremolo Blocks,CURRENT,Yes,
+Floyd Rose Systems,Tremolo Arms & Assemblies,CURRENT,Yes,
+Floyd Rose Systems,Tremolo Springs,CURRENT,Yes,
+Floyd Rose Systems,Replacement Parts,CURRENT,Yes,
+Tools & Luthier Supplies,Fretwork Tools,CURRENT,Yes,
+Tools & Luthier Supplies,Nut & Setup Tools,CURRENT,Yes,
+Tools & Luthier Supplies,Measuring Tools,CURRENT,Yes,
+Tools & Luthier Supplies,Wrenches,CURRENT,Yes,
+Accessories,Guitar Straps,CURRENT,Yes,
+Accessories,Capos,CURRENT,Yes,
+Accessories,Digital Tuners,CURRENT,Yes,Electronic tuning devices; separate from Machine Heads / Tuners
+Accessories,Guitar Slides,CURRENT,Yes,
+Cleaning & Care,Cleaning products,FUTURE,No,Keep in blueprint; hide until stocked

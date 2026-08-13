@@ -1,0 +1,9 @@
+DEVELOPER IMPLEMENTATION NOTES,
+Principle,"Wix Stores remains the source of truth for product records, SKU, price, stock, product options/variants, checkout and orders."
+CMS role,"Use CMS/catalogue layer for discovery, compatibility, technical data, search keywords and multi-path browsing."
+No duplication,"One sellable product may surface through Shop by Part, Shop by Guitar and Shop by Brand without creating duplicate Wix products."
+Empty categories,Future categories may exist in blueprint/CMS but should be hidden from live navigation until products exist.
+eBay caution,Do not restructure existing Wix Store products until the Wix/eBay relationship is confirmed safe.
+Phase approach,Launch can use Wix-native collections/filters where practical; richer compatibility/search can be phased in later.
+Compatibility,Design fields now so a richer compatibility system can be added later without rebuilding the catalogue.
+Inventory caveat,The existing CMS starter workbook is not a complete inventory snapshot. Do not infer 'not stocked' solely from absence in that file.
