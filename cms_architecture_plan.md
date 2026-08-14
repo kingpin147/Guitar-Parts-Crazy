@@ -11,7 +11,9 @@ This collection will extend your existing Wix Stores products. It will contain a
 
 | Field Name | Field Type | Example Values | Purpose |
 | :--- | :--- | :--- | :--- |
-| **Product** | Reference (Single) | `Stores/Products` | The core link to the actual Wix product. *(Mandatory)* |
+| **Product** | Reference (Single) | `Stores/Products` | The core link to the actual Wix product. *(Mandatory, matched via Product Name on import)* |
+| **SKU** | Text | `GTH-GE1996T-C` | Permanent identifier key for cross-referencing and ongoing maintenance. |
+| **Wix Product ID** | Text | `a1b2c3d4-5678...` | Optional system ID reference. |
 | **Brand** | Text | Gotoh, Wilkinson | Enables "Shop by Brand" and filtering. |
 | **Part Type** | Text | Bridges, Necks | Enables "Shop by Part". |
 | **Guitar Type** | Tags | Strat, Tele, Les Paul | Tags allow multiple values (e.g. if a part fits a Strat *and* a Tele). |
@@ -35,14 +37,22 @@ To link your new CMS data to your existing Wix Stores products, your import file
 When you import data into a Wix Reference field, Wix uses the **Primary Field** of the target collection. For Wix Stores, the Primary Field is the **Product Name**.
 
 **Step-by-Step Data Prep:**
-1. **Export** your current products from Wix Stores to a CSV file. This gives you the exact spelling of all your Product Names.
+1. **Export** your current products from Wix Stores to a CSV file. This gives you the exact spelling of all your Product Names and SKUs.
 2. **Create a new spreadsheet** for your CMS import.
-3. Make the first column **Product Name**. Copy/paste the names exactly as they appear in your Wix Stores export.
-4. Add your new columns for the custom filters: **Brand**, **Part Type**, **Guitar Type**, etc.
-5. Fill in the data for each product. 
-6. When you import this CSV into your new `ProductMetadata` collection, Wix will read the "Product Name" column and automatically connect it to the actual product in Wix Stores!
+3. Make Column 1 **Product Name** (used by Wix on initial import to establish the Reference link).
+4. Make Column 2 **SKU** (stored in `ProductMetadata` as a permanent, static anchor key).
+5. Add your new columns for the custom filters: **Brand**, **Part Type**, **Guitar Type**, etc.
+6. Fill in the data for each product. 
+7. When you import this CSV into your new `ProductMetadata` collection, Wix will read the "Product Name" column and automatically connect it to the actual product in Wix Stores!
 
-*Note: You do NOT need to match or use the native Wix Store Categories. The Product Finder will completely ignore native categories and rely 100% on your new custom columns.*
+> [!NOTE]
+> **Product Title Changes & Reference Link Integrity:**
+> - **Initial Import:** Wix matches the CSV record using the Product Name.
+> - **Post-Import Link:** Once Wix creates the link, it stores the internal permanent system ID (`_id`).
+> - **Title Changes:** Changing a Product Name in Wix Stores after import **will NOT break the CMS link**. The link remains intact and automatically displays the updated product details.
+> - **SKU Column Advantage:** Keeping `SKU` as a text field in `ProductMetadata` ensures you always have a fixed business key for cross-referencing (e.g. `VLOOKUP` in Excel) if you ever perform future bulk CSV updates.
+
+*Note: You do NOT need to match or use native Wix Store Categories. The Product Finder will completely ignore native categories and rely 100% on your new custom columns.*
 
 ## How the Product Finder Will Work (Velo Logic)
 Even with just one collection, the product finder works perfectly:
@@ -55,22 +65,5 @@ Even with just one collection, the product finder works perfectly:
 
 ## Ongoing Maintenance Workflow
 When you add a new product:
-1. **Wix Stores:** Add the product normally.
-2. **Wix CMS (`ProductMetadata`):** Open this *single* database, add a new row, select your Wix Store product from the dropdown, and type/select your text and tags. No duplication of price, title, or SKU, and no other databases to manage!
-That is a great question. You actually do not need to use the native Wix Store categories at all for this!
-
-I have just updated the implementation plan with a new section called "How to Prepare Your Import File (CSV)" to explain exactly how you link the two together.
-
-Here is the quick breakdown of how it works:
-
-When you import data into a Wix CMS Reference field, Wix needs to know which product you are referring to. It does this by looking at the Product Name (which is the primary field for Wix Stores).
-
-So, to prepare your data:
-
-You will export your existing products from Wix Stores to a CSV file. This gives you a spreadsheet with the exact spelling of all your current Product Names.
-In your new spreadsheet for the CMS import, make the very first column Product Name and paste those names in.
-Then, simply add your custom columns: Brand, Part Type, Guitar Type, etc.
-When you upload this CSV to your new ProductMetadata CMS collection, Wix will see the "Product Name" column, find the matching name in Wix Stores, and automatically link them together!
-Because they are linked by the Product Name, the custom Product Finder code will completely ignore the native Wix Store categories. It will filter strictly based on your new CMS columns (Guitar Type, Part Type, Brand), and then simply display the attached Wix product.
-
-Please check out the updated plan, and let me know if that process makes sense for preparing your data!
+1. **Wix Stores:** Add the product normally (Title, Price, Inventory, SKU).
+2. **Wix CMS (`ProductMetadata`):** Open this *single* database, add a new row, select your Wix Store product from the dropdown, input its SKU, and select your filter text and tags. No duplication of price, title, or stock, and no extra databases to manage!
