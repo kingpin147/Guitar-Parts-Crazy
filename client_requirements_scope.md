@@ -88,11 +88,24 @@ Provide a simple client guide and handover covering:
 
 ---
 
-## 3. Project Start & Confirmation Checklist
+## 3. Division of Responsibilities (AI Developer vs. Client)
+
+As discussed, responsibilities for implementation will be divided between the AI Developer (Antigravity) and the Client:
+
+**AI Developer (Antigravity):**
+* Write custom Velo (JavaScript) code for CMS filtering, search, and dynamic product discovery.
+* Write scripts to process, sanitize, and format the final CMS workbook for import into Wix Data.
+* Architect the database schema connecting native Wix Stores products to the new CMS navigation.
+* Assist in code review, troubleshooting, and debugging Velo/backend issues.
+
+**Client / UI Designer:**
+* Build all visual elements inside the Wix Editor (homepage, layouts, product pages).
+* Manage native Wix Stores configuration, payments, and eBay app integration settings.
+* Handle the New Zealand site duplication and DNS setup within the Wix Dashboard.
+
+---
+
+## 4. Project Start & Confirmation Checklist
 Before commencing development:
-1. **Confirm Scope & Velo Solution:** Confirm mutual alignment on the Wix CMS + Velo architecture.
-2. **Quote Confirmation:**
-   - [ ] Base price for the Australian website redesign, CMS & filtering development.
-   - [ ] Separate quoted line item for New Zealand site duplication & localization.
-   - [ ] Explicit identification of any potential out-of-scope costs upfront.
-3. **Receive Assets:** Client will provide the final CMS master workbook and landing page mock-up package upon quote confirmation.
+1. **Confirm Scope & Velo Solution:** Confirm mutual alignment on the division of responsibilities and Wix CMS + Velo architecture.
+2. **Receive Assets:** Client provides the **final CMS master workbook** to begin database architecture and Velo code development.
